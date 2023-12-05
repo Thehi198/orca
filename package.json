@@ -3,13 +3,19 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts"
   },
   "dependencies": {
+    "@libsql/client": "^0.4.0-pre.5",
+    "@notionhq/client": "^2.2.14",
+    "drizzle-orm": "^0.29.1",
     "elysia": "latest"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@flydotio/dockerfile": "latest",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.6"
   },
   "module": "src/index.js"
 }

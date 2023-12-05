@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1701711050734,
+      "tag": "0000_spicy_kabuki",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1701736818729,
+      "tag": "0001_nostalgic_marauders",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1701754510459,
+      "tag": "0002_fearless_liz_osborn",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1701754617848,
+      "tag": "0003_third_dazzler",
+      "breakpoints": true
+    }
+  ]
+}
