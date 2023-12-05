@@ -4,9 +4,10 @@ import { createClient } from '@libsql/client';
 import { assignments } from '../db/schema'; 
 import { Assignment } from './types';
 
+
 // define constants
 const client = createClient({
-  url: 'libsql://orca-thehi198.turso.io',
+  url: '',
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
