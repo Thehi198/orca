@@ -48,3 +48,8 @@ Configure course information in the `orcaConfig.ts` file.
 Use the `dockerfile` to build a docker container for deployment.
 
 Reccomended Fly.io spec: `shared-cpu-1x-1GB`
+
+## Limitations & Future
+- One way sync
+- Does not support assignment updates (planned)
+- Provides minimal API interface
