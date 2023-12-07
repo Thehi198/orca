@@ -2,7 +2,7 @@
 A synchronization service between the Canvas LMS REST API and the Notion REST API.
 
 ## Architecture
-![Alt text](architecture.png)
+![Alt text](diagram.png)
 
 ### Dependancies
 ```
