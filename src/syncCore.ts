@@ -3,7 +3,9 @@ import { coreDB } from "./dbUtils";
 import { classes, classId, databaseId } from "./orcaConfig";
 import { createPage } from "./notionUtils";
 
+
 export async function sync(){
+    let syncedAssignments = 0
     for (let i = 0; i < classes.length; i++) {
         const data = await assignmentData(classId[i]);
         for (let j = 0; j < data.length; j++) {
@@ -12,8 +14,13 @@ export async function sync(){
             if (state == "no objects found") {
                 const response = await createPage(databaseId, assignment.name, assignment.dueDate, assignment.url, classes[i]);
                 console.log(response);
+                syncedAssignments = syncedAssignments + data.length
+                return syncedAssignments;
              }
+             return syncedAssignments;
         }
+    return syncedAssignments;
     }
-    return "synced";
+    console.log("synced" + syncedAssignments + "assignments")
+    return "synced" + syncedAssignments + "assignments";
 }

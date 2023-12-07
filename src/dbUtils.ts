@@ -7,7 +7,7 @@ import { Assignment } from './types';
 
 // define constants
 const client = createClient({
-  url: '',
+  url: 'libsql://orca-thehi198.turso.io',
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
@@ -16,6 +16,11 @@ const db = drizzle(client);
 export async function getAssignment(assignmentid:string){
   const assignmentList = await db.select().from(assignments).where(eq(assignments.id, assignmentid)).execute();
   return assignmentList;
+}
+
+export async function getlenAssignments(){
+  const lenAssignments = await db.select().from(assignments).execute()
+  return lenAssignments.length;
 }
 
 // define the function

@@ -1,14 +1,18 @@
 import { Elysia } from "elysia";
-import { getAssignment, deleteAssignment } from "./dbUtils";
+import { getAssignment, deleteAssignment, getlenAssignments } from "./dbUtils";
 import { assignmentData } from "./canvasUtils";
 import { sync } from "./syncCore";
 
-const status = await sync();
-console.log(status);
+
 
 const app = new Elysia()
 
-app.get("/", () => "🐋 Welcome to Orca!");
+app.get("/", async() =>{
+  const status = await sync();
+  const len = await getlenAssignments();
+  console.log(status);
+  return "🐋 Welcome to Orca!\n" + "# synced in this session: " + status + "\n# of synced all time: " + len 
+});
 
 console.log(
   "🐋 Welcome to Orca!"
@@ -23,7 +27,7 @@ app.get("/api/assignment/:assignmentid", async (context) => {
 app.get("/api/course/:courseid", async (context) => {
   const courseid = context.params.courseid;
   try {
-    const data = await assignmentData("499");
+    const data = await assignmentData(courseid);
     console.log(data);
     return data;
   } catch (error) {
