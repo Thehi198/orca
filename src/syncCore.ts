@@ -7,21 +7,20 @@ import { createPage } from "./notionUtils";
 export async function sync(){
     let syncedAssignments = 0
     for (let i = 0; i < classes.length; i++) {
-        console.log(classes[i]);
         const data = await assignmentData(classId[i]);
         for (let j = 0; j < data.length; j++) {
-            console.log(data[j]);
             const assignment = data[j];
             const state = await coreDB(assignment);
-            console.log(state);
             if (state == "no objects found") {
-                console.log("no objects found");
                 const response = await createPage(databaseId, assignment.name, assignment.dueDate, assignment.url, classes[i]);
                 console.log(response);
                 syncedAssignments = syncedAssignments + data.length
+                return syncedAssignments;
              }
+             return syncedAssignments;
         }
+    return syncedAssignments;
     }
     console.log("synced" + syncedAssignments + "assignments")
-    return syncedAssignments;
+    return "synced" + syncedAssignments + "assignments";
 }
