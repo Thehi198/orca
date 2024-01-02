@@ -20,6 +20,7 @@ export async function getAssignment(assignmentid:string){
 
 export async function getlenAssignments(){
   const lenAssignments = await db.select().from(assignments).execute()
+  console.log(lenAssignments.length)
   return lenAssignments.length;
 }
 
@@ -58,3 +59,5 @@ export async function coreDB(assignment:Assignment){
         return "state exists";
     }
 }
+
+

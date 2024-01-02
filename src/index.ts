@@ -51,4 +51,9 @@ app.get("/api/deleteAssignment/:assignmentId", async (context) => {
   }
 });
 
+app.get("/api/lenAssignments", async (context) => {
+  const len = await getlenAssignments();
+  return len;
+});
+
 app.listen(3000);
