@@ -2,7 +2,7 @@ import { drizzle } from 'drizzle-orm/libsql';
 import { eq } from 'drizzle-orm';
 import { createClient } from '@libsql/client';
 import { assignments } from '../db/schema'; 
-import { Assignment } from './types';
+import { Assignment } from './orcaConfig';
 
 
 // define constants

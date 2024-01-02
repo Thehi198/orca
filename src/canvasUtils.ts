@@ -1,4 +1,4 @@
-import { Assignment } from './types';
+import { Assignment } from './orcaConfig';
 
 async function getAssignmentData(courseId:string){
     const options = {
