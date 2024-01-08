@@ -3,12 +3,10 @@ import { coreDB } from "./dbUtils";
 import { classes, classId, databaseId } from "./orcaConfig";
 import { createPage } from "./notionUtils";
 
-console.log(classId)
 
 export async function sync(){
     let syncedAssignments = 0
     for (let i = 0; i < classes.length; i++) {
-        console.log(classes.length)
         const data = await assignmentData(classId[i]);
         console.log(classId[i])
         for (let j = 0; j < data.length; j++) {
@@ -25,10 +23,4 @@ export async function sync(){
     }
     console.log("synced " + syncedAssignments + " assignments")
     return "synced " + syncedAssignments + " assignments";
-}
-try{
-    sync()
-}
-catch(e){
-    console.log(e)
 }
