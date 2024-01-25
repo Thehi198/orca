@@ -5,7 +5,7 @@ export const classes = [
     "📈 Physics"]
 
 export const classId = [
-    "483",
+    "484",
     "477",
     "494",
     "499"
