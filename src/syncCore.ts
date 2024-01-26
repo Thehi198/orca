@@ -9,13 +9,8 @@ export async function sync(){
     for (let i = 0; i < classes.length; i++) {
         const data = await assignmentData(classId[i]);
         console.log(classId[i])
-        inner:
         for (let j = 0; j < data.length; j++) {
             const assignment = data[j];
-            if (assignment.dueDate == null){
-                console.log("break")
-                break inner;
-            } 
             const state = await coreDB(assignment);
             console.log(state)
             console.log(assignment)

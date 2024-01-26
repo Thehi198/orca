@@ -1,7 +1,15 @@
-import { Client } from '@notionhq/client';
+import { ok } from "assert";
+import { create } from "domain";
+
+const { Client } = require('@notionhq/client');
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
+
+async function getDatabaseObject(databaseId: string) {
+    const output = await notion.databases.retrieve({ database_id: databaseId });
+    return output;
+}
 
 export async function createPage(databaseId: string, pageName: string, dueDate: string | null, URL: string, className: string) {
 
