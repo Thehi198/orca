@@ -6,7 +6,7 @@ export const classes = [
 
 export const classId = [
     "484",
-    "477",
+    "504",
     "494",
     "499"
 ]
