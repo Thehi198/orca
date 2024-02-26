@@ -8,9 +8,12 @@ export async function sync(){
     let syncedAssignments = 0
     for (let i = 0; i < classes.length; i++) {
         const data = await assignmentData(classId[i]);
+        console.log(data)
         console.log(classId[i])
+        console.log(data.length)
         for (let j = 0; j < data.length; j++) {
             const assignment = data[j];
+            console.log(data[j])
             const state = await coreDB(assignment);
             console.log(state)
             console.log(assignment)

@@ -51,8 +51,10 @@ export async function deleteAssignment(status:string, assignmentid:string) {
 export async function coreDB(assignment:Assignment){
     const id = assignment.id
     const state = await checkAssignmentState(id);
+    console.log(state)
     if (state === "null") {
         await writeAssignment(assignment);
+        console.log("no objects found")
         return "no objects found";
     }
     else {
