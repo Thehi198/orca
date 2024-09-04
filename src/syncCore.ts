@@ -20,5 +20,5 @@ export async function sync(){
         }
     }
     console.log("synced " + syncedAssignments + "assignments")
-    return "synced " + syncedAssignments + " assignments";
+    return + syncedAssignments;
 }

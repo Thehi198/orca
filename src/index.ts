@@ -7,16 +7,14 @@ import { sync } from "./syncCore";
 
 const app = new Elysia()
 
-app.get("/", async() =>{
-  const status = await sync();
-  const len = await getlenAssignments();
-  console.log(status);
-  return "🐋 Welcome to Orca!\n" + +"# synced in this session: " + status + "\n# of synced all time: " + len 
-});
-
 console.log(
   "🐋 Welcome to Orca!"
 );
+
+app.get("/", async() =>{
+  return "🐋 Welcome to Orca!"
+});
+
 
 app.get("/api/assignment/:assignmentid", async (context) => {
   const assignmentid = context.params.assignmentid;
@@ -36,10 +34,12 @@ app.get("/api/course/:courseid", async (context) => {
   }
 });
 
-app.get("/api/sync", async (context) => {
+app.get("/api/sync", async() =>{
   const status = await sync();
-  return status;
+  const len = await getlenAssignments();
+  return "🐋 Welcome to Orca!\n # synced in this session: " + status + "\n# of synced all time: " + len 
 });
+
 app.get("/api/deleteAssignment/:assignmentId", async (context) => {
   const assignmentId = context.params.assignmentId;
   if (assignmentId === "all") {
