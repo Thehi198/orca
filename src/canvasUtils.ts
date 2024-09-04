@@ -7,7 +7,7 @@ async function getAssignmentData(courseId:string){
         },
       };
       const params = new URLSearchParams({bucket: 'future'}).toString();
-      const response = await fetch(`https://downtownschool.instructure.com/api/v1/courses/${courseId}/assignments`+ '?' + params, options);
+      const response = await fetch(`https://canvas.olin.edu/api/v1/courses/${courseId}/assignments`+ '?' + params, options);
       const data = await response.json();
       return data
 }

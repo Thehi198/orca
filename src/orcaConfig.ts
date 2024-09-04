@@ -1,14 +1,14 @@
 export const classes = [
-    "🪙 History",
-    "📕 English",
-    "➗ Math",
-    "📈 Physics"]
+    "QEA 1",
+    "ModSim",
+    "OFYI",
+    "HoT"]
 
 export const classId = [
-    "484",
-    "504",
-    "494",
-    "499"
+    "828",
+    "830",
+    "834",
+    "793"
 ]
 
 export type Assignment = {
@@ -19,4 +19,4 @@ export type Assignment = {
     className: string,
   }
 
-export const databaseId: string = '59ddcc0de9f64ae4a9e03504a7aedeff';
+export const databaseId: string = 'c80a68f4ffeb4f35a317d39f2d82abe9';

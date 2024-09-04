@@ -9,21 +9,18 @@ export async function sync(){
     for (let i = 0; i < classes.length; i++) {
         const data = await assignmentData(classId[i]);
         console.log(data)
-        console.log(classId[i])
-        console.log(data.length)
         for (let j = 0; j < data.length; j++) {
             const assignment = data[j];
-            console.log(data[j])
-            const state = await coreDB(assignment);
-            console.log(state)
             console.log(assignment)
+            const state = await coreDB(assignment);
             if (state == "no objects found") {
                 const response = await createPage(databaseId, assignment.name, assignment.dueDate, assignment.url, classes[i]);
-                console.log(response)
                 syncedAssignments = syncedAssignments + data.length
              }
         }
     }
-    console.log("synced " + syncedAssignments + " assignments")
+    console.log("synced " + syncedAssignments + "assignments")
     return "synced " + syncedAssignments + " assignments";
 }
+
+sync()

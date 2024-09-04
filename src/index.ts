@@ -11,7 +11,7 @@ app.get("/", async() =>{
   const status = await sync();
   const len = await getlenAssignments();
   console.log(status);
-  return "🐋 Welcome to Orca!\n" + "# synced in this session: " + status + "\n# of synced all time: " + len 
+  return "🐋 Welcome to Orca!\n" + +"# synced in this session: " + status + "\n# of synced all time: " + len 
 });
 
 console.log(

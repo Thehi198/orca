@@ -7,15 +7,15 @@
     "start": "bun run src/index.ts"
   },
   "dependencies": {
-    "@libsql/client": "^0.4.0-pre.5",
-    "@notionhq/client": "^2.2.14",
-    "drizzle-orm": "^0.29.1",
+    "@libsql/client": "^0.4.3",
+    "@notionhq/client": "^2.2.15",
+    "drizzle-orm": "^0.29.5",
     "elysia": "latest"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "latest",
     "bun-types": "latest",
-    "drizzle-kit": "^0.20.6"
+    "drizzle-kit": "^0.20.18"
   },
   "module": "src/index.js"
 }

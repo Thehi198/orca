@@ -12,7 +12,7 @@ async function getDatabaseObject(databaseId: string) {
 }
 
 export async function createPage(databaseId: string, pageName: string, dueDate: string | null, URL: string, className: string) {
-
+    console.log(dueDate)
     if(dueDate === null){
     const response = await notion.pages.create({
         "parent": {
