@@ -2,13 +2,16 @@ export const classes = [
     "QEA 1",
     "ModSim",
     "OFYI",
-    "HoT"]
+    "HoT",
+    "DesNat"
+]
 
 export const classId = [
     "828",
     "830",
     "834",
-    "793"
+    "793",
+    "803"
 ]
 
 export type Assignment = {

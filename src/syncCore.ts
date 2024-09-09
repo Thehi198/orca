@@ -22,3 +22,5 @@ export async function sync(){
     console.log("synced " + syncedAssignments + "assignments")
     return + syncedAssignments;
 }
+
+sync()
